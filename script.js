@@ -8,18 +8,22 @@ const result = document.getElementById('calcul');
 const GetReset = document.getElementById('reset');
 const dotButton = document.querySelector('.dot');
 
-// for  prevent user typing keyboards to make input value 
+// for  prevent user typing keyboards to make input value and let also the numeric keyboard
 
 document.addEventListener('keypress', (event) => {
-  for(let i = 0;i<= 9;i++){
-    if(event.key == 'i'){
-      return event.key;
-    }else if(event.key == '+' || event.key == '-' || event.key == '/' || event.key == '*'){
-        return event.key;
+  for(let i = 0; i<= lesSorties.length; i++){
+    if(event.key == '0'|| event.key == '1'|| event.key == '2'|| event.key == '3'|| event.key == '4'|| event.key == '5'|| event.key == '6'|| event.key == '7'|| event.key == '8'|| event.key == '9'  ){
+      return 
+    }else if(event.key == '+' || event.key == '-' || event.key == '/' || event.key == '*' || event.key == '=' || event.key == '%'){
+        return 
     }else {
       event.preventDefault();
     }
+
   }
+  
+    
+  
   
 })
 
