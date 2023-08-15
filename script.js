@@ -11,7 +11,16 @@ const dotButton = document.querySelector('.dot');
 // for  prevent user typing keyboards to make input value 
 
 document.addEventListener('keypress', (event) => {
-  event.preventDefault();
+  for(let i = 0;i<= 9;i++){
+    if(event.key == 'i'){
+      return event.key;
+    }else if(event.key == '+' || event.key == '-' || event.key == '/' || event.key == '*'){
+        return event.key;
+    }else {
+      event.preventDefault();
+    }
+  }
+  
 })
 
 
@@ -95,7 +104,7 @@ plusoumoins.addEventListener('click', () => {
 const signePlus = document.getElementById('plus');
 signePlus.addEventListener('click', () => {
   
-    if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-'){
+    if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-' || lesSorties.value.substr(lesSorties.value.length - 1) == '.' ){
     
         lesSorties.value = lesSorties.value ;
     
@@ -112,7 +121,7 @@ signePlus.addEventListener('click', () => {
 
 const signeMoins = document.getElementById('minus');
 signeMoins.addEventListener('click', () => {
-  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-'){
+  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-' || lesSorties.value.substr(lesSorties.value.length - 1) == '.' ){
     lesSorties.value = lesSorties.value;
   }else{
     result.textContent = lesSorties.value + '-';
@@ -126,7 +135,7 @@ signeMoins.addEventListener('click', () => {
 
 const signeMultiplier = document.getElementById('times');
 signeMultiplier.addEventListener('click', () => {
-  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-'){
+  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-' || lesSorties.value.substr(lesSorties.value.length - 1) == '.' ){
      lesSorties.value = lesSorties.value;
   }else{
     result.textContent = lesSorties.value + '*';
@@ -139,7 +148,7 @@ signeMultiplier.addEventListener('click', () => {
 
 const signeDivision = document.getElementById('divideby');
 signeDivision.addEventListener('click', () => {
-  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-'){
+  if(lesSorties.value.substr(lesSorties.value.length - 1) == '/' || lesSorties.value.substr(lesSorties.value.length - 1) == '+' || lesSorties.value.substr(lesSorties.value.length - 1) == '*' || lesSorties.value.substr(lesSorties.value.length - 1) == '-' || lesSorties.value.substr(lesSorties.value.length - 1) == '.' ){
     lesSorties.value = lesSorties.value;
   }else{
     result.textContent = lesSorties.value + '/';
